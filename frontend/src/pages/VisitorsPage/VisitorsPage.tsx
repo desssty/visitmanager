@@ -13,8 +13,11 @@ const VisitorsPage: FC = () => {
   const searchTerm = searchParams.get("search") || "";
 
   const setPresenceFilter = (value: string) => {
-    searchParams.set("presence", value);
-    setSearchParams(searchParams);
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      next.set("presence", value);
+      return next;
+    });
   };
 
   const setSearchTerm = (value: string) => {

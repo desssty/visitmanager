@@ -10,5 +10,5 @@ frontend/dist/
 
 # === Backend (json-server) ===
 backend/node_modules/
-backend/db.json
+
 
