@@ -36,11 +36,14 @@ const AddVisitorFormModal: FC<AddVisitorFormModalProps> = ({
       };
 
       // Отправляем нового посетителя
-      const response = await fetch("http://localhost:3000/visitors", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newVisitor),
-      });
+      const response = await fetch(
+        "https://visitmanager-backend.onrender.com/visitors",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newVisitor),
+        }
+      );
 
       if (!response.ok) throw new Error();
 

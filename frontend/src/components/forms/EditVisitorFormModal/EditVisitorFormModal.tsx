@@ -54,7 +54,7 @@ const EditVisitorFormModal: FC<EditVisitorFormModalProps> = ({
 
     try {
       const response = await fetch(
-        `http://localhost:3000/visitors/${visitor.id}`,
+        `https://visitmanager-backend.onrender.com/visitors/${visitor.id}`,
         {
           method: "DELETE",
         }
