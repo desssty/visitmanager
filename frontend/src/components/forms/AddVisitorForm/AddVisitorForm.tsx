@@ -17,7 +17,9 @@ const AddVisitorFormModal: FC<AddVisitorFormModalProps> = ({
   const handleSubmit = async (data: VisitorFormData) => {
     try {
       // Получаем текущих посетителей
-      const visitorsResponse = await fetch("http://localhost:3000/visitors");
+      const visitorsResponse = await fetch(
+        "https://visitmanager-backend.onrender.com/visitors"
+      );
       if (!visitorsResponse.ok) throw new Error("Ошибка при загрузке списка");
 
       const visitors: { id: string }[] = await visitorsResponse.json();

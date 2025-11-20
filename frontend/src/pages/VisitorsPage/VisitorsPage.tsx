@@ -38,7 +38,9 @@ const VisitorsPage: FC = () => {
       params.append("present", "false");
     }
 
-    fetch(`http://localhost:3000/visitors?${params.toString()}`)
+    fetch(
+      `https://visitmanager-backend.onrender.com/visitors?${params.toString()}`
+    )
       .then((res) => res.json())
       .then((data) => setVisitors(data))
       .catch((err) => console.error("Ошибка загрузки данных:", err));
